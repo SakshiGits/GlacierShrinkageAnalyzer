@@ -73,36 +73,36 @@ export default function GlacierAnalyzerClient() {
           <div className="mt-4 flex gap-8">
             <div>
               <p className="font-semibold">Year 2000 mask</p>
-              <img src={analysis.image1.path} alt="2000 mask" width={350} height={350} />
-              <p>White pixels: {analysis.image1.stats.white_pixels}</p>
-              <p>White %: {analysis.image1.stats.white_pct.toFixed(4)}%</p>
+              <img src={analysis.image1.path} alt="2000 mask" width={400} height={400} />
+              {/* <p className="text-gray-500">White pixels: {analysis.image1.stats.white_pixels}</p> */}
+              <p className="pt-3">Glacier area %: {analysis.image1.stats.white_pct.toFixed(4)}%</p>
             </div>
 
             <div>
               <p className="font-semibold">Year 2025 mask</p>
-              <img src={analysis.image2.path} alt="2025 mask" width={350} height={350} />
-              <p>White pixels: {analysis.image2.stats.white_pixels}</p>
-              <p>White %: {analysis.image2.stats.white_pct.toFixed(4)}%</p>
+              <img src={analysis.image2.path} alt="2025 mask" width={400} height={400} />
+              {/* <p>White pixels: {analysis.image2.stats.white_pixels}</p> */}
+              <p className="pt-3">Glacier area %: {analysis.image2.stats.white_pct.toFixed(4)}%</p>
             </div>
           </div>
 
           <div className="mt-4 p-4 border rounded ">
-            <h4 className="font-semibold">Shrinkage calculation</h4>
-            <p>
-              Absolute change in white percentage:
-              <br />
+            <h4 className="font-semibold pb-2">Shrinkage calculation</h4>
+            <p className="pr-3">
+              Absolute change in white percentage
+              {/* <br />
               Δ = white_pct(2000) - white_pct(2025)
-              <br />
-              = {analysis.image1.stats.white_pct.toFixed(4)} - {analysis.image2.stats.white_pct.toFixed(4)}
-              <br />
-              = {(analysis.image1.stats.white_pct - analysis.image2.stats.white_pct).toFixed(4)} percentage points
+              <br /> */}
+              {/* = {analysis.image1.stats.white_pct.toFixed(4)} - {analysis.image2.stats.white_pct.toFixed(4)}
+              <br /> */}
+              = {(analysis.image1.stats.white_pct - analysis.image2.stats.white_pct).toFixed(4)}%
             </p>
 
-            <p className="mt-2">
-              Relative shrinkage (% of 2000 area):
-              <br />
+            <p className="mt-2 pr-3">
+              Relative shrinkage
+              {/* <br />
               shrinkage% = (Δ / white_pct(2000)) × 100
-              <br />
+              <br /> */}
               = {((analysis.image1.stats.white_pct - analysis.image2.stats.white_pct) / analysis.image1.stats.white_pct * 100).toFixed(4)}%
             </p>
           </div>
