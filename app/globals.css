@@ -1,26 +1,63 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
+/* 🌙 Default/Light Mode Colors */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  /* White background for light mode */
+  --foreground: #000000;
+  /* Black text for light mode */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* ☀️ Dark Mode Colors */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000000;
+    /* Black background for dark mode */
+    --foreground: #f8f8f8;
+    /* Near-white text for dark mode */
   }
 }
 
 body {
   background: var(--background);
+  /* Now correctly sets white or black */
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  padding: 16px;
 }
+
+
+.gradient-text {
+  /* 1. Define the gradient background (This will become the text color) */
+  background: linear-gradient(90deg,
+      #a4adbd 0%,
+      #0982c3 100%);
+
+  /* 2. Clip the background to the shape of the text */
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* 3. Make the text transparent so the clipped background shows */
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* header {
+  @apply glass sticky top-0 z-50;
+
+  nav {
+    @apply flex flex-row justify-between mx-auto container sm:px-10 px-5 py-4;
+  }
+
+  .logo {
+    @apply flex flex-row items-center gap-2;
+
+    p {
+      @apply text-xl font-bold italic max-sm:hidden;
+    }
+  }
+
+  ul {
+    @apply flex flex-row items-center gap-6;
+  }
+} */
