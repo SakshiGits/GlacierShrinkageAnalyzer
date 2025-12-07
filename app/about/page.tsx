@@ -1,10 +1,10 @@
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-linear-to-b from-slate-50 to-blue-50">
       {/* Hero Section with Glacier Background */}
       <div className="relative h-96 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-cyan-700/60 z-10"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-blue-900/80 to-cyan-700/60 z-10"></div>
         <div className="absolute inset-0 bg-[url('https://picsum.photos/seed/glacier1/1920/600.jpg')] bg-cover bg-center"></div>
         <div className="relative z-20 h-full flex flex-col justify-center items-center text-white px-4">
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-center tracking-wide">Himalayan Glaciers</h1>
@@ -24,7 +24,7 @@ const About = () => {
         <div className="max-w-4xl mx-auto">
           {/* Introduction Card */}
           <div className="bg-white rounded-2xl shadow-xl p-8 mb-12 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-100 to-transparent rounded-full -mr-32 -mt-32 opacity-70"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-bl from-blue-100 to-transparent rounded-full -mr-32 -mt-32 opacity-70"></div>
             <h2 className="text-3xl font-bold text-blue-900 mb-6 relative">The Critical Importance of Glaciers</h2>
             <p className="text-gray-700 leading-relaxed relative z-10">
               Ice caps and glaciers cover 10% of the planet's geographical area and provide 3% of the planet's total water, accounting for almost 80% of the world's freshwater. After the Polar regions, the Himalayas have the most extensive glacier cover and are known as the "third pole". With the accelerated melting rate of glaciers in past decades resulting in a reduced volume of ice, the water security of the entire Himalayan region has been affected significantly.
@@ -33,7 +33,7 @@ const About = () => {
 
           {/* Impact Section */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 shadow-lg">
+            <div className="bg-linear-to-br from-blue-50 to-cyan-50 rounded-xl p-6 shadow-lg">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white mr-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -47,7 +47,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 shadow-lg">
+            <div className="bg-linear-to-br from-blue-50 to-cyan-50 rounded-xl p-6 shadow-lg">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white mr-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -63,7 +63,7 @@ const About = () => {
           </div>
 
           {/* Project Details Card */}
-          <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl shadow-xl p-8 text-white mb-12">
+          <div className="bg-linear-to-r from-blue-600 to-cyan-600 rounded-2xl shadow-xl p-8 text-white mb-12">
             <h2 className="text-3xl font-bold mb-6">Our Research Approach</h2>
             <p className="text-lg mb-6">
               This project aims to analyze the shrinkage of glaciers in the Himalayas using satellite imagery. Satellite images are manually collected from official free data available by NASA. The Satellite images are from Landsat 7, Landsat 9 and Sentinel-2 L2A consistently.
@@ -80,21 +80,21 @@ const About = () => {
             <h2 className="text-3xl font-bold text-blue-900 mb-6">Data Sources</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-full w-24 h-24 mx-auto flex items-center justify-center mb-4">
+                <div className="bg-linear-to-br from-blue-100 to-blue-200 rounded-full w-24 h-24 mx-auto flex items-center justify-center mb-4">
                   <span className="text-2xl font-bold text-blue-800">L7</span>
                 </div>
                 <h3 className="text-lg font-semibold text-blue-900 mb-2">Landsat 7</h3>
                 <p className="text-gray-600 text-sm">High-resolution imagery from NASA's earth observation satellite</p>
               </div>
               <div className="text-center">
-                <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-full w-24 h-24 mx-auto flex items-center justify-center mb-4">
+                <div className="bg-linear-to-br from-blue-100 to-blue-200 rounded-full w-24 h-24 mx-auto flex items-center justify-center mb-4">
                   <span className="text-2xl font-bold text-blue-800">L9</span>
                 </div>
                 <h3 className="text-lg font-semibold text-blue-900 mb-2">Landsat 9</h3>
                 <p className="text-gray-600 text-sm">Latest generation satellite with improved imaging capabilities</p>
               </div>
               <div className="text-center">
-                <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-full w-24 h-24 mx-auto flex items-center justify-center mb-4">
+                <div className="bg-linear-to-br from-blue-100 to-blue-200 rounded-full w-24 h-24 mx-auto flex items-center justify-center mb-4">
                   <span className="text-2xl font-bold text-blue-800">S2</span>
                 </div>
                 <h3 className="text-lg font-semibold text-blue-900 mb-2">Sentinel-2 L2A</h3>
@@ -114,7 +114,7 @@ const About = () => {
       </div>
 
       {/* Footer with Ice Crystal Pattern */}
-      <div className="relative bg-gradient-to-r from-blue-900 to-cyan-800 text-white py-12">
+      <div className="relative bg-linear-to-r from-blue-900 to-cyan-800 text-white py-12">
         <div className="absolute inset-0 opacity-10">
           <div className="h-full w-full" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
