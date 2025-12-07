@@ -9,12 +9,12 @@ export default function GlacierDropdown({ selectedGlacier, setSelectedGlacier }:
 
   return (
     <div className="p-5">
-      <p className="font-bold mb-2 text-[#6e99b0] text-xl">Select the Glacier to view it's Satellite Image</p>
+      <p className="font-bold mb-2 text-[#6e99b0] text-xl pb-3">Select the Glacier to view it's Satellite Image and Analyze Shrinkage</p>
       {/* Dropdown */}
       <select
         value={selectedGlacier}
         onChange={(e) => setSelectedGlacier(e.target.value)}
-        className="border pr-16 pl-3.5 py-3 font-bold text-blue-950 bg-blue-200 rounded-md"
+        className="box-border relative z-30 inline-flex items-center justify-center w-auto px-10 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-indigo-900 rounded-md cursor-pointer group ring-offset-2 ring-2 ring-indigo-300 ring-offset-indigo-200 hover:ring-offset-indigo-500 ease focus:outline-none"
       >
         <option value="">Select a Glacier</option>
 

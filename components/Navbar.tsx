@@ -10,8 +10,8 @@ const Navbar = () => {
           <p className='text-xl font-bold pl-4'>GlacierTrack</p>
         </Link>
         <ul className='flex flex-row items-center gap-6'>
-          <Link href='/' className=' hover:text-blue-400 transition'>Map</Link>
-          <Link href='/' className=' hover:text-blue-400 transition'>About</Link>
+          <Link href='/map/page.tsx' className=' hover:text-blue-400 transition'>Map</Link>
+          <Link href='/about' className=' hover:text-blue-400 transition'>About</Link>
           <Link href='/' className=' hover:text-blue-400 transition'>Contribute</Link>
         </ul>
       </nav>

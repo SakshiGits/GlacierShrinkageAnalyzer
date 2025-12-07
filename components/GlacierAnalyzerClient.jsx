@@ -23,14 +23,16 @@ export default function GlacierAnalyzerClient({ selectedGlacier }) {
   }
 
   return (
-    <div className="mt-8">
-      <button
-        onClick={handleAnalyze}
-        disabled={!selectedGlacier}
-        className="bg-blue-600 text-white px-4 py-2 rounded disabled:bg-gray-400"
-      >
-        Analyze Shrinkage
-      </button>
+    <div className="mt-8 pb-2 px-6">
+      {selectedGlacier && (
+        <button
+          onClick={handleAnalyze}
+          disabled={!selectedGlacier}
+          className="box-border relative z-30 inline-flex items-center justify-center w-auto px-10 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-indigo-900 rounded-md cursor-pointer group ring-offset-2 ring-2 ring-indigo-300 ring-offset-indigo-200 hover:ring-offset-indigo-500 ease focus:outline-none"
+        >
+          Analyze Shrinkage
+        </button>
+      )}
     </div>
   );
 }
