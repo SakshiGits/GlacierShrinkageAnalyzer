@@ -3,19 +3,18 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export default function GlacierDropdown() {
-  const [selectedGlacier, setSelectedGlacier] = useState("");
+export default function GlacierDropdown({ selectedGlacier, setSelectedGlacier }: { selectedGlacier: string, setSelectedGlacier: (glacier: string) => void }) {
 
   const glaciers = ["gangotri", "pindari", "zemu", "milam", "barashigri", "siachen"];
 
   return (
     <div className="p-5">
-      <p className="font-bold mb-2 text-xl">Select the Glacier to view it's Satellite Image</p>
+      <p className="font-bold mb-2 text-[#6e99b0] text-xl">Select the Glacier to view it's Satellite Image</p>
       {/* Dropdown */}
       <select
         value={selectedGlacier}
         onChange={(e) => setSelectedGlacier(e.target.value)}
-        className="border pr-16 pl-3.5 py-3 font-bold text-black bg-blue-200 rounded-md"
+        className="border pr-16 pl-3.5 py-3 font-bold text-blue-950 bg-blue-200 rounded-md"
       >
         <option value="">Select a Glacier</option>
 
