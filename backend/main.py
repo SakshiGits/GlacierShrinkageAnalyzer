@@ -6,6 +6,7 @@ from analyze import analyze_glacier
 
 app = FastAPI()
 
+
 # Allow frontend to talk to backend
 app.add_middleware(
     CORSMiddleware,
