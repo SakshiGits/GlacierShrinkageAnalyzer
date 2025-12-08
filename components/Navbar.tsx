@@ -13,7 +13,7 @@ const Navbar = () => {
           <Link href='/' className=' hover:text-blue-400 transition'>Home</Link>
           <Link href='/map' className=' hover:text-blue-400 transition'>Map</Link>
           <Link href='/about' className=' hover:text-blue-400 transition'>About</Link>
-          <Link href='/' className=' hover:text-blue-400 transition'>Contribute</Link>
+          <Link href='/contribute' className=' hover:text-blue-400 transition'>Contribute</Link>
         </ul>
       </nav>
     </header>
