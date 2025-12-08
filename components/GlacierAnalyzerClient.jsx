@@ -4,8 +4,10 @@ import { useState } from "react";
 
 export default function GlacierAnalyzerClient({ selectedGlacier }) {
   const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   async function handleAnalyze() {
+    setLoading(true);
     const formData = new FormData();
     formData.append("glacier", selectedGlacier);
 
@@ -24,19 +26,25 @@ export default function GlacierAnalyzerClient({ selectedGlacier }) {
       body: formData
     });
 
+    if (!response.ok) {
+      console.error(`HTTP error! Status: ${response.status}`);
+      setResult(null);
+      setLoading(false);
+      return;
+    }
+
     const data = await response.json();
-    console.log("Result:", data);
     setResult(data);
+    setLoading(false);
   }
 
   return (
     <div className="mt-8 pb-8 px-6">
-
       {/* Analyze Button */}
       {selectedGlacier && (
         <button
           onClick={handleAnalyze}
-          disabled={!selectedGlacier}
+          disabled={loading || !selectedGlacier}
           className="box-border relative z-30 inline-flex items-center justify-center px-10 py-3 
                      font-bold text-white bg-indigo-900 rounded-md cursor-pointer 
                      ring-offset-2 ring-2 ring-indigo-300 hover:ring-offset-indigo-500 
@@ -47,24 +55,23 @@ export default function GlacierAnalyzerClient({ selectedGlacier }) {
       )}
 
       {/* Results Section */}
-      {result && (
+      {loading && <p className="mt-10 text-gray-700">Analyzing... Please wait.</p>}
+
+      {result && !loading && (
         <div className="mt-10 flex flex-col gap-8">
-
           {/* Masks */}
-          <div className="flex flex-row  gap-10">
-
-            {/* 2000 */}
-            <div className="flex flex-col ">
+          <div className="flex flex-row gap-10">
+            <div className="flex flex-col">
               <h3 className="text-lg font-semibold text-gray-700 mb-2">Year 2000</h3>
               <Image
                 src={`data:image/png;base64,${result.mask_2000}`}
-                alt="Mask 2000" width={400}
+                alt="Mask 2000"
+                width={400}
                 height={400}
               />
             </div>
 
-            {/* 2025 */}
-            <div className="flex flex-col ">
+            <div className="flex flex-col">
               <h3 className="text-lg font-semibold text-gray-700 mb-2">Year 2025</h3>
               <Image
                 src={`data:image/png;base64,${result.mask_2025}`}
@@ -73,7 +80,6 @@ export default function GlacierAnalyzerClient({ selectedGlacier }) {
                 height={400}
               />
             </div>
-
           </div>
 
           {/* Stats */}
@@ -98,10 +104,8 @@ export default function GlacierAnalyzerClient({ selectedGlacier }) {
               </p>
             </div>
           </div>
-
         </div>
       )}
-
     </div>
   );
 }
