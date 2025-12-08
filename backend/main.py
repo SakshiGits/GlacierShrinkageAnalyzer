@@ -38,4 +38,10 @@ async def analyze_endpoint(
     # Call analysis function
     result = analyze_glacier(path_2000, path_2025)
 
-    return {"glacier": glacier, "result": result}
+    return {"glacier": glacier,
+            "mask_2000": result["mask_2000"],
+            "mask_2025": result["mask_2025"],
+            "stats_2000": result["stats_2000"],
+            "stats_2025": result["stats_2025"],
+            "shrinkage": result["shrinkage"]
+            }
