@@ -1,12 +1,8 @@
-'use client'
 import Image from "next/image"
-import { useState } from "react"
 
 const Page = () => {
-  const [imageLoaded, setImageLoaded] = useState(false)
-
   return (
-    <div className="min-h-screen bg-linear-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4 py-8 md:py-12">
         {/* Header Section */}
         <header className="text-center mb-10">
@@ -30,12 +26,9 @@ const Page = () => {
                   alt="Himalayan Glaciers Map"
                   width={900}
                   height={800}
-                  className={`object-contain transition-opacity duration-700 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-                  onLoadingComplete={() => setImageLoaded(true)}
+                  className="object-contain"
+                  priority
                 />
-                {!imageLoaded && (
-                  <div className="absolute inset-0 bg-gray-200 animate-pulse"></div>
-                )}
               </div>
             </div>
           </section>
