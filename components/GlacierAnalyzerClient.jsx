@@ -21,7 +21,7 @@ export default function GlacierAnalyzerClient({ selectedGlacier }) {
     formData.append("image_2025", blob2025, `${selectedGlacier}_2025.png`);
 
     // Send to backend
-    const response = await fetch("https://huggingface.co/spaces/Sakshishaw/glacier-backend/analyze", {
+    const response = await fetch("/api/proxy", {
       method: "POST",
       body: formData
     });
