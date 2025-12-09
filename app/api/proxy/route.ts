@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 // Replace this with your Hugging Face Space URL
-const HUGGINGFACE_URL = "https://huggingface.co/spaces/Sakshishaw/glacier-backend/analyze";
+const RENDER_URL = "https://glaciershrinkageanalyzer-backend.onrender.com/analyze";
 
 export async function POST(req: NextRequest) {
   try {
@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
     const formData = await req.formData();
 
     // Forward it to Hugging Face
-    const response = await fetch(HUGGINGFACE_URL, {
+    const response = await fetch(RENDER_URL, {
       method: "POST",
       body: formData,
     });
